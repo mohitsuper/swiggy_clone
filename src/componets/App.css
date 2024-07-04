@@ -1,0 +1,33 @@
+
+nav li{
+  display: flex;
+  gap: .4rem;
+  cursor: pointer;
+}
+
+nav li:hover{
+ color: #ea580e;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.overlay{
+  background: rgb(0,0,0,0.7);
+}
+
+.overlay div{
+  transition:  left 0.4s ,right 0.4s;
+
+}
+
+.icon{
+  height: 100%;
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.icon:hover{
+  background: #ccc;
+}
