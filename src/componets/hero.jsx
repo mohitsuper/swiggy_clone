@@ -1,37 +1,54 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { RiArrowLeftLine } from "react-icons/ri";
 import { RiArrowRightLine } from "react-icons/ri";
 import {obj} from "./category";
 
 
 export default function Hero() {
+  let [silder,setSilder] = useState(0);
+  console.log(silder)
+  let RightSilder =()=>{
+    if(silder!==1200){
+      setSilder(silder+300)
+    }
+  }
+  let LeftSilder =()=>{
+    if(silder!==0){
+      setSilder(silder-300)
+    }
+  }
   return (
-    <div className='pt-[6rem] container-2xl'>
+    <div className='pt-5 container-2xl'>
        <div className=" container">
-        <div className='flex justify-between'>
-        <h1>What's on your mind?</h1>
-        <div className='flex  gap-3 '>
-            <div className='icon flex items-center justify-center bg-[#eee] rounded-full '><RiArrowLeftLine />
+        <div className='flex justify-between  items-center'>
+        <h1 class="mb-3 text-2xl">What's on your mind?</h1>
+        <div className='flex  gap-3'>
+            <div className='icon'><RiArrowLeftLine onClick={LeftSilder}/>
             </div>
-            <div className='icon flex items-center justify-center bg-[#eee] rounded-full '><RiArrowRightLine />
+            <div className='icon'><RiArrowRightLine onClick={RightSilder}/>
             </div>
         </div>
       
         </div> 
-        <div className='flex'>
+        <div className='flex overflow-hidden'>
           {
-            obj.map((obj,index)=>{
+            obj.map((obj,index)=>
+              {
               return(
-                <div class="flex flex-col">
-                  <img src={"http:/localhost:5000/images"+obj.image}/>
-                  <h3>{obj.path}</h3>
+                <div style={{transform:`translateX(-${silder}%)`}} className='shrink-0 w-[180px] mr-1 duration-500' key={index}>
+                  <img src={`images/${obj.image}`} className="" alt="no founds"/>
                 </div>
               )
              })
             
           }
         </div>
+        <hr class="border h-[2px]"/>
+
       </div> 
+
+
     </div>
+
   )
 }

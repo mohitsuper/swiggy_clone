@@ -1,9 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+}
 
 nav li{
   display: flex;
   gap: .4rem;
   cursor: pointer;
 }
+
+.footer-section ul{
+  padding: 0;
+  padding-left: 0;
+}
+
+li a{
+  text-decoration: none;
+  padding-bottom: 20px ;
+  font-size:2rem;
+   color: #555;
+}
+
 
 nav li:hover{
  color: #ea580e;
@@ -23,11 +43,46 @@ nav li:hover{
 }
 
 .icon{
-  height: 100%;
-  font-size: 1.2rem;
-  padding: 1rem;
+  padding: .5rem;
+  background: #eee;
+  border-radius: 50%;
 }
-
 .icon:hover{
   background: #ccc;
+}
+
+.reItem:hover{
+transform: scale(0.97);
+}
+
+.Navshow{
+  display: block;
+}
+
+@media only screen and (max-width: 900px) {
+.Navshow{
+  position: absolute;
+  transition-duration: 0.5s;
+  top: 10px;
+  right: 0;
+  width: 30%;
+  height: 800px;
+  background: white;
+  z-index: 1000;
+  display: flex;
+  padding-top: 30px;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.Navshow li{
+  align-items: center;
+  padding-left: 20px;
+  width: 100%;
+  display: flex;
+}
+
+
 }
